@@ -1,0 +1,16 @@
+languaje: java
+jdk:
+  -openjdk8
+sudo: false
+script: mvn clean install
+cache:
+  directories:
+    - "$HOME/.m2"
+deploy:
+  skip_cleanup: true
+  provider: heroku
+  api_key:
+    secure:
+  app: hello-spring-mary
+  on:
+    repo: mar3182/hello-spring-mary
